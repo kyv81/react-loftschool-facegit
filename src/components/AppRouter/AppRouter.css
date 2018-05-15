@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logout {
+  padding-top: 50px;
+}
+
+.error {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 50px;
+  color: #ff0000;
+}

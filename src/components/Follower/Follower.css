@@ -1,0 +1,17 @@
+.follower {
+  width: 400px;
+  margin: 50px auto 20px;
+  display: flex;
+}
+
+.follower-avatar {
+  max-width: 100px;
+}
+
+.follower-img {
+  max-width: 100%;
+}
+
+.follower-info {
+  padding-left: 20px;
+}
