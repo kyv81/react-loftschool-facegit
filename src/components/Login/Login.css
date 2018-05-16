@@ -1,0 +1,9 @@
+.login {
+  padding-top: 30px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.login input {
+  width: 100%;
+}
