@@ -8,20 +8,14 @@ import './UserPage.css';
 export class UserPage extends Component {
   componentDidMount() {
     if (this.props.match) {
-      const { fetchUserRequest, fetchTokenRequest } = this.props;
       const name = this.props.match.params.name;
 
-      if (name) {
-        fetchUserRequest(name);
-      } else {
-        fetchTokenRequest();
-      }
+      this.requestName(name);
     }
   }
 
   componentDidUpdate(prevProps) {
     const {
-      fetchUserRequest,
       match: {
         params: { name: prevName },
       },
@@ -29,7 +23,7 @@ export class UserPage extends Component {
     const name = this.props.match.params.name;
 
     if (name !== prevName) {
-      fetchUserRequest(name);
+      this.requestName(name);
     }
   }
 
@@ -61,6 +55,12 @@ export class UserPage extends Component {
 
   renderError = () => {
     return <p className="error">Пользователь не найден</p>;
+  };
+
+  requestName = name => {
+    const { fetchTokenRequest, fetchUserRequest } = this.props;
+
+    return name ? fetchUserRequest(name) : fetchTokenRequest();
   };
 
   render() {
